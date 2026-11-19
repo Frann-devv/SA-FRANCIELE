@@ -1,0 +1,306 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+header {
+    background: #1e3a8a;
+    color: #ffffff;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    font-size: 25px;
+    margin-right: auto;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    background: #dc2626;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+header a:hover {
+    background: #b91c1c;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+    flex: 1;
+}
+
+section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px #0000000c;
+}
+
+section h2 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+/* =========================================
+   MENSAGENS DO SISTEMA
+========================================= */
+
+.mensagem {
+    padding: 13px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mensagem.erro {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.mensagem.sucesso {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* =========================================
+   ACESSO (LOGIN E CADASTRO)
+========================================= */
+
+.acesso {
+    max-width: 430px;
+    margin: 40px auto;
+    padding: 35px;
+    box-shadow: 0 5px 20px #00000012;
+}
+
+.abas {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.abas button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #64748b;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: 0.3s;
+}
+
+.abas button:hover,
+.abas button:focus {
+    color: #1e3a8a;
+    border-bottom-color: #1e3a8a;
+    outline: none;
+}
+
+.aba h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    background: #ffffff;
+    color: #1e293b;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px #2563eb40;
+}
+
+.aba form button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 22px;
+    background: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.aba form button:hover {
+    background: #1d4ed8;
+}
+
+/* =========================================
+   PAINEL DO ALUNO
+========================================= */
+
+.dashboard p {
+    font-size: 17px;
+    color: #475569;
+}
+
+/* =========================================
+   BOLETIM
+========================================= */
+
+.boletim .materia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 5px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.boletim .materia:last-child {
+    border-bottom: none;
+}
+
+.boletim .materia:hover {
+    background: #f8fafc;
+}
+
+.boletim .materia strong {
+    color: #15803d;
+}
+
+/* =========================================
+   FALTAS
+========================================= */
+
+.faltas p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+/* =========================================
+   QUADRO DE HORÁRIOS
+========================================= */
+
+.horarios {
+    overflow-x: auto;
+}
+
+.horarios table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+.horarios th,
+.horarios td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.horarios th {
+    background: #1e3a8a;
+    color: #ffffff;
+}
+
+.horarios td:first-child {
+    font-weight: bold;
+    color: #1e3a8a;
+    white-space: nowrap;
+}
+
+.horarios td p {
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+.horarios tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 17px;
+    }
+
+    .acesso {
+        padding: 23px;
+        margin: 25px auto;
+    }
+}

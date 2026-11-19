@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Portal do Aluno</h1>
+
+        {% if aluno %}
+            <p>Olá, {{ aluno.nome }}!</p>
+            <a href="{{ url_for('sair') }}">Sair</a>
+        {% endif %}
+    </header>
+
+    <main>
+        {% if erro %}
+            <div class="mensagem erro">{{ erro }}</div>
+        {% endif %}
+
+        {% if sucesso %}
+            <div class="mensagem sucesso">{{ sucesso }}</div>
+        {% endif %}
+
+        {% if aluno %}
+            <section class="dashboard">
+                <h2>Bem-vindo, {{ aluno.nome }}!</h2>
+                <p>Turma: {{ aluno.turma }}</p>
+            </section>
+
+            <section class="boletim">
+                <h2>Meu boletim</h2>
+
+                {% if boletim %}
+                    {% for item in boletim %}
+                        <div class="materia">
+                            <span>{{ item.materia }}</span>
+                            <strong>{{ item.media }}</strong>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Nenhuma nota cadastrada.</p>
+                {% endif %}
+            </section>
+
+            <section class="faltas">
+                <h2>Minhas faltas</h2>
+                <p>Total de faltas: {{ total_faltas }}</p>
+            </section>
+
+            <section class="horarios">
+                <h2>Quadro de horários</h2>
+
+                {% if aluno.quadro_horarios %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Horários</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dia, materias in aluno.quadro_horarios.items() %}
+                                <tr>
+                                    <td>{{ dia }}</td>
+                                    <td>
+                                        {% for materia in materias %}
+                                            <p>{{ materia }}</p>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>Nenhum horário disponível.</p>
+                {% endif %}
+            </section>
+
+        {% else %}
+            <section class="acesso">
+                <div class="abas">
+                    <button type="button" onclick="mostrarAba('login')">Entrar</button>
+                    <button type="button" onclick="mostrarAba('cadastro')">Cadastrar</button>
+                </div>
+
+                <div id="login" class="aba">
+                    <h2>Entrar na conta</h2>
+
+                    <form method="POST" action="{{ url_for('index') }}">
+                        <input type="hidden" name="acao" value="login">
+
+                        <label for="usuario">Usuário</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+
+                <div id="cadastro" class="aba">
+                    <h2>Criar conta</h2>
+
+                    <form method="POST" action="{{ url_for('index') }}">
+                        <input type="hidden" name="acao" value="cadastro">
+
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                        <label for="novo_usuario">Usuário</label>
+                        <input type="text" id="novo_usuario" name="novo_usuario" placeholder="Crie um usuário" required>
+
+                        <label for="nova_senha">Senha</label>
+                        <input type="password" id="nova_senha" name="nova_senha" placeholder="Crie uma senha" required>
+
+                        <label for="turma">Turma</label>
+                        <select id="turma" name="turma" required>
+                            {% for nome_turma in turmas %}
+                                <option value="{{ nome_turma }}">{{ nome_turma }}</option>
+                            {% endfor %}
+                        </select>
+
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>Portal do Aluno</p>
+    </footer>
+
+    <script>
+        function mostrarAba(nomeAba) {
+            document.querySelectorAll('.aba').forEach(function(aba) {
+                aba.style.display = 'none';
+            });
+
+            const selecionada = document.getElementById(nomeAba);
+            if (selecionada) {
+                selecionada.style.display = 'block';
+            }
+        }
+
+        const abaInicial = '{{ aba_ativa | default("login") }}';
+        mostrarAba(abaInicial);
+    </script>
+
+</body>
+</html>

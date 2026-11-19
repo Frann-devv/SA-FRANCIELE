@@ -1,0 +1,127 @@
+{
+    "ana": {
+        "nome": "Ana Silva",
+        "senha": "1234",
+        "turma": "Turma A",
+        "notas": {
+            "Matemática": [
+                8.5,
+                8.0,
+                0.0
+            ],
+            "História": [
+                9.0,
+                9.0,
+                10.0
+            ],
+            "L.Portuguesa": [
+                10.0,
+                8.0,
+                7.0
+            ],
+            "L.E.Inglês": [
+                6.0,
+                8.5,
+                7.0
+            ],
+            "ED.Física": [
+                7.0,
+                9.5,
+                8.0
+            ],
+            "Biologia": [
+                4.0,
+                10.0,
+                7.0
+            ],
+            "Artes": [],
+            "L.E.Espanhol": [
+                9.5,
+                10.0,
+                7.0
+            ],
+            "Filosofia": [
+                9.5,
+                10.0,
+                7.5
+            ],
+            "Física": [
+                8.0,
+                6.0,
+                10.0
+            ],
+            "Geografia": [
+                10.0,
+                10.0,
+                10.0
+            ],
+            "Química": [
+                7.0,
+                8.5,
+                10.0
+            ],
+            "Sociologia": [
+                8.0,
+                6.0,
+                7.0
+            ]
+        },
+        "faltas": {
+            "Matemática": 4,
+            "História": 2,
+            "L.Portuguesa": 1,
+            "L.E.Inglês": 4,
+            "ED.Física": 3,
+            "Biologia": 2,
+            "Artes": 0,
+            "L.E.Espanhol": 1,
+            "Filosofia": 0,
+            "Física": 2,
+            "Geografia": 3,
+            "Química": 1,
+            "Sociologia": 2
+        },
+        "quadro_horarios": {
+            "Segunda-Feira": [
+                "Matemática",
+                "Sociologia",
+                "Matemática",
+                "Geografia",
+                "História",
+                "ED.Física"
+            ],
+            "Terça-Feira": [
+                "L.E.Espanhol",
+                "Sociologia",
+                "L.E.Inglês",
+                "Filosofia",
+                "L.E.Inglês",
+                "Geografia"
+            ],
+            "Quarta-Feira": [
+                "Física",
+                "Artes",
+                "L.Portuguesa",
+                "L.Portuguesa",
+                "ED.Física",
+                "Química"
+            ],
+            "Quinta-Feira": [
+                "Biologia",
+                "Geografia",
+                "L.Portuguesa",
+                "História",
+                "Matemática",
+                "L.Portuguesa"
+            ],
+            "Sexta-Feira": [
+                "Química",
+                "Matemática",
+                "Física",
+                "L.Portuguesa",
+                "Biologia",
+                "Biologia"
+            ]
+        }
+    }
+}
